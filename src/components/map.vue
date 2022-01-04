@@ -31,8 +31,8 @@
         <bike :data="info"></bike>
         <div class="text">
             <h2>{{info[0].name_tw}}</h2>
-            <h3>地區:&nbsp;&nbsp;{{info[0].scity}}&nbsp;{{info[0].district_tw}}</h3>
-            <h3>區域:&nbsp;&nbsp;{{info[0].address_tw}}</h3>
+            <h3>區別:&nbsp;&nbsp;{{info[0].scity}}&nbsp;{{info[0].district_tw}}</h3>
+            <h3>地址:&nbsp;&nbsp;{{info[0].address_tw}}</h3>
             <h3 v-show="info[0].empty_spaces">共有{{info[0].parking_spaces}}個位置,{{info[0].available_spaces}}個可借+{{info[0].empty_spaces}}個可還</h3>
         </div>
     </div>
