@@ -3,10 +3,10 @@
         <div class="card" v-for="(i,index) in data" :key="index" v-show="index<inde*6&&index>=(inde-1)*6">
             <iframe v-if="index<inde*6&&index>=(inde-1)*6" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" :src="'https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+i.lat+','+i.lng+'&z=16&output=embed'"></iframe>
             <div class="name">
-                {{i.sna}}({{i.sbi}}/{{i.tot}})
+                {{i.name_tw}}({{i.available_spaces}}/{{i.parking_spaces}})
             </div>
             <div class="info">
-                <p><i class="bi bi-tag"></i>&nbsp;{{i.ar}}</p>
+                <p><i class="bi bi-tag"></i>&nbsp;{{i.address_tw}}</p>
             </div>
         </div>
     </div>

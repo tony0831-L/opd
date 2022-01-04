@@ -30,10 +30,10 @@
     <div class="linfo" v-if="info.length>0">
         <bike :data="info"></bike>
         <div class="text">
-            <h2>{{info[0].sna}}</h2>
-            <h3>地區:&nbsp;&nbsp;{{info[0].scity}}&nbsp;{{info[0].sarea}}</h3>
-            <h3>區域:&nbsp;&nbsp;{{info[0].ar}}</h3>
-            <h3>共有{{info[0].tot}}個位置,{{info[0].sbi}}個可借+{{info[0].bemp}}個可還</h3>
+            <h2>{{info[0].name_tw}}</h2>
+            <h3>地區:&nbsp;&nbsp;{{info[0].scity}}&nbsp;{{info[0].district_tw}}</h3>
+            <h3>區域:&nbsp;&nbsp;{{info[0].address_tw}}</h3>
+            <h3 v-show="info[0].empty_spaces">共有{{info[0].parking_spaces}}個位置,{{info[0].available_spaces}}個可借+{{info[0].empty_spaces}}個可還</h3>
         </div>
     </div>
 </template>
@@ -67,32 +67,32 @@ export default {
   methods:{
       ping(){
         this.sta.forEach(element => {
-            if (element.sbi==0) {
+            if (element.available_spaces==0) {
                 this.markers.push({
                     icon:{
                         url:"https://maps.google.com/mapfiles/ms/icons/red-dot.png",
                         scaledSize: {width: 50, height: 50},
                         labelOrigin: {x: 16, y: -10}
                     },
-                    title:element.sna+" ("+element.sbi+"/"+element.tot+")",
+                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
                     position:{
                         lat:parseFloat(element.lat),lng:parseFloat(element.lng)
                     }
                 })
-            }else if(element.sbi<=5){
+            }else if(element.available_spaces<=5){
                 this.markers.push({
                     icon:{
                         url:"https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
                         scaledSize: {width: 50, height: 50},
                         labelOrigin: {x: 16, y: -10}
                     },
-                    title:element.sna+" ("+element.sbi+"/"+element.tot+")",
+                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
                     position:{
                         lat:parseFloat(element.lat),lng:parseFloat(element.lng)
                     }
                 })
             }
-            else if(element.sbi=="land"){
+            else if(element.available_spaces=="land"){
                 console.log("in")
                 this.markers.push({
                     icon:{
@@ -100,7 +100,7 @@ export default {
                         scaledSize: {width: 70, height: 70},
                         labelOrigin: {x: 16, y: -10}
                     },
-                    title:element.sna+" ("+element.sbi+"/"+element.tot+")",
+                    title:element.name_tw,
                     position:{
                         lat:parseFloat(element.lat),lng:parseFloat(element.lng)
                     }
@@ -112,7 +112,7 @@ export default {
                         scaledSize: {width: 50, height: 50},
                         labelOrigin: {x: 16, y: -10}
                     },
-                    title:element.sna+" ("+element.sbi+"/"+element.tot+")",
+                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
                     position:{
                         lat:parseFloat(element.lat),lng:parseFloat(element.lng)
                     }

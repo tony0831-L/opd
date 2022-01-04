@@ -46,21 +46,36 @@ export default {
     }
   },
   mounted(){
-      fetch('https://api.kcg.gov.tw/api/service/get/9c8e1450-e833-499c-8320-29b36b7ace5c')
-      .then(res=>{
-        return res.json();
-      })
-      .then(res=>{
-        this.data = res.data.XML_Head.Infos.Info
-      })
+    fetch('https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json')
+    .then(res=>{
+      return res.json();
+    })
+    .then(res=>{
+      this.data = res.result.records
+    })
 
-      fetch('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092')
-      .then(res=>{
-        return res.json();
-      })
-      .then(res=>{
-        this.ubike=res.data.retVal
-      })
+    fetch('https://apis.youbike.com.tw/api/front/station/all?lang=tw&type=2')
+    .then(res=>{
+      return res.json();
+    })
+    .then(res=>{
+      this.ubike=res.retVal
+    })
+      // fetch('https://api.kcg.gov.tw/api/service/get/9c8e1450-e833-499c-8320-29b36b7ace5c')
+      // .then(res=>{
+      //   return res.json();
+      // })
+      // .then(res=>{
+      //   this.data = res.data.XML_Head.Infos.Info
+      // })
+
+      // fetch('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092')
+      // .then(res=>{
+      //   return res.json();
+      // })
+      // .then(res=>{
+      //   this.ubike=res.data.retVal
+      // })
   }
 }
 </script>

@@ -43,7 +43,7 @@ export default {
     },
     mounted(){
         this.bike=this.sta;
-        this.bike.push({"ar":this.info.Add,"sna":this.info.Name,"sbi":"land","lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
+        this.bike.push({"address_tw":this.info.Add,"name_tw":this.info.Name,"available_spaces":"land","district_tw":this.info.Zone,"lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
         console.log(this.bike[this.bike.length-1])
     }
 };
