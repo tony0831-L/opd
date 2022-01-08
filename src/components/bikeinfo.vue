@@ -51,66 +51,66 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .cards{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-    }
-    .card{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        width: 464px;
-        height: 300px;
-        overflow: hidden;
-        background-color: rgba(51, 51, 51, 0.623);
-        position: relative;
-        cursor: pointer;
-        margin: 1.2%;
-        margin-top: -1%;
-    }
-    .card:hover{
-        transition: all 1s;
-        font-size: 1.15rem;
-        font-weight: 600;
-        background-color: rgba(51, 51, 51, 0.423);
-        text-shadow: 0.1em 0.1em 0.5em black
-    }
-    iframe{
-        position:absolute;
-        opacity: .5;
-    }
-    iframe:hover{
-        transition: all .75s;
-        opacity: .7;
-    }
-    .name{
-        pointer-events: none;
-        position:absolute;
-        flex-direction: column;
-        color: #fcfcfc;
-    }
-    .info{
-        pointer-events: none;
-        position: absolute;
-        bottom: 5px;
-        left: 10px;
-        color: #fcfcfc;
-        font-size: .6rem;
-        text-align: left;
-        background-color: rgba(51, 51, 51, 0.623);
-        padding: 1% 2%;
-        font-weight: 400;
+        .card{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            width: 464px;
+            height: 300px;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.623);
+            position: relative;
+            cursor: pointer;
+            margin: 1.2%;
+            margin-top: -1%;
+            &:hover{
+                transition: all 1s;
+                font-size: 1.15rem;
+                font-weight: 600;
+                background-color: rgba(51, 51, 51, 0.423);
+                text-shadow: 0.1em 0.1em 0.5em black
+            }
+            iframe{
+                position:absolute;
+                opacity: .5;
+                &:hover{
+                    transition: all .75s;
+                    opacity: .7;
+                }
+            }
+            .name{
+                pointer-events: none;
+                position:absolute;
+                flex-direction: column;
+                color: #fcfcfc;
+            }
+            .info{
+                pointer-events: none;
+                position: absolute;
+                bottom: 5px;
+                left: 10px;
+                color: #fcfcfc;
+                font-size: .6rem;
+                text-align: left;
+                background-color: rgba(51, 51, 51, 0.623);
+                padding: 1% 2%;
+                font-weight: 400;
+            }
+        }
     }
     .page{
         text-align: center;
         font-size: 2rem;
-    }
-    .page span{
-        cursor: pointer;
+        span{
+            cursor: pointer;
+        }
     }
 </style>

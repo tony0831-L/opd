@@ -80,84 +80,84 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 *{
   margin: 0%;
   padding: 0%;
 }
 body{
   background-color: #fcfcfc;
-}
-#app {
-  width: 100%;
-  overflow: hidden;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  position: relative;
-}
-nav{
-  background: #fff;
-  width: 90%;
-  position: fixed;
-  padding: .8% 8%;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0em .3em .1em 0 rgba(51, 51, 51, 0.707);
-  z-index: 1;
-}
-nav img{
-  width: 100px;
-  cursor: pointer;
-}
-nav a{
-  font-size: 1.2rem;
-  color: #2c3e50;
-  text-decoration: none;
-}
-nav a:hover{
-  border-bottom: solid .1em #2c3e50;
-}
-nav .section{
-  width: 30%;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.landing{
-  margin-top: 3.5%;
-  height:32.5vh;
-  overflow: hidden;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.623);
-  color: #fcfcfc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.landing h1{
-  margin: 0px;
-  padding: 0px;
-  text-shadow: 0.1em 0.1em 0.5em black;
-  position: absolute;
-  font-size: 2.5em;
-}
-.landing img{
-  position: absolute;
-  width:100vw;
-  opacity: .6;
-}
-footer{
-  padding: .5% 1.2%;
-  font-size: .8rem;
-  background-color: #333;
-  color: #fff;
-  line-height: 1.8em;
-}
-footer h2{
-  font-size: 1.2rem;
+  #app {
+    width: 100%;
+    overflow: hidden;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    position: relative;
+    nav{
+      background: #fff;
+      width: 90%;
+      position: fixed;
+      padding: .8% 8%;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0em .3em .1em 0 rgba(51, 51, 51, 0.707);
+      z-index: 1;
+      img{
+        width: 100px;
+        cursor: pointer;
+      }
+      a{
+        font-size: 1.2rem;
+        color: #2c3e50;
+        text-decoration: none;
+        &:hover{
+          border-bottom: solid .1em #2c3e50;
+        }
+      }
+      .section{
+        width: 30%;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    }
+    .landing{
+      margin-top: 3.5%;
+      height:32.5vh;
+      overflow: hidden;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.623);
+      color: #fcfcfc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1{
+        margin: 0px;
+        padding: 0px;
+        text-shadow: 0.1em 0.1em 0.5em black;
+        position: absolute;
+        font-size: 2.5em;
+      }
+      img{
+        position: absolute;
+        width:100vw;
+        opacity: .6;
+      }
+    }
+    footer{
+      padding: .5% 1.2%;
+      font-size: .8rem;
+      background-color: #333;
+      color: #fff;
+      line-height: 1.8em;
+      h2{
+        font-size: 1.2rem;
+      }
+    }
+  }
 }
 </style>

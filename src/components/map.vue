@@ -134,7 +134,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .sinfo{
         margin: auto;
         width: 70%;
@@ -144,11 +144,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    .sinfo h1{
-        color: #2c3e50;
-        font-weight: 600;
-        font-size: 1.5em;
+        h1{
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
     }
     .contaner{
         margin: auto;
@@ -161,10 +161,20 @@ export default {
         justify-content: center;
         margin-top: 2%;
         margin-bottom: 2.5%;
-    }
-    .contaner h1{
-        position: absolute;
-        color: #fff;
+        h1{
+            position: absolute;
+            color: #fff;
+        }
+        .tag{
+            pointer-events: none;
+            background: #fff;
+            position: absolute;
+            padding: .5% 2%;
+            font-weight: 400;
+            bottom: 6px;
+            left: 6px;
+            box-shadow: .2em .2em .3em 0 rgba(51, 51, 51, .7);
+        }
     }
     .vue-map-container{
         position: absolute;
@@ -172,38 +182,28 @@ export default {
         width: 100%;
         height: 100%;
         opacity: .5;
-    }
-    .vue-map-container:hover{
-        transition: all 1.75s;
-        box-shadow: -.5em .5em .3em 0 rgba(51, 51, 51, .7);
-        opacity: 1;
-    }
-    .tag{
-        pointer-events: none;
-        background: #fff;
-        position: absolute;
-        padding: .5% 2%;
-        font-weight: 400;
-        bottom: 6px;
-        left: 6px;
-        box-shadow: .2em .2em .3em 0 rgba(51, 51, 51, .7);
+        &:hover{
+            transition: all 1.75s;
+            box-shadow: -.5em .5em .3em 0 rgba(51, 51, 51, .7);
+            opacity: 1;
+        }
     }
     .linfo{
         display: flex;
         width: 70%;
-        margin:auto
-    }
-    .text{
-        width:100%;
-        margin-left: 3%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        line-height:2.5rem;
-    }
-    .text h2{
-        font-size: 1.75rem;
+        margin:auto;
+        .text{
+            width:100%;
+            margin-left: 3%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            line-height:2.5rem;
+            h2{
+                font-size: 1.75rem;
+            }
+        }
     }
 </style>

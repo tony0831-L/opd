@@ -10,7 +10,8 @@
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.4",
     "core-js": "^3.6.5",
-    "sass-loader": "^12.3.0",
+    "sass": "^1.44.0",
+    "sass-loader": "^10.1.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {

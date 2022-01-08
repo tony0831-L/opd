@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .sinfo{
         margin: auto;
         width: 70%;
@@ -83,11 +83,18 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    .sinfo h1{
-        color: #2c3e50;
-        font-weight: 600;
-        font-size: 1.5em;
+        h1{
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.5em;
+            .back{
+                cursor: pointer;
+                &:hover{
+                    transition: all .5s;
+                    font-size: 1.6rem;
+                }
+            }
+        }
     }
     .cards{
         width: 100%;
@@ -95,71 +102,64 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-    }
-    .card{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        width: 464px;
-        height: 180px;
-        overflow: hidden;
-        background-color: rgba(51, 51, 51, 0.623);
-        position: relative;
-        cursor: pointer;
-        margin: 1.2%;
-    }
-    .card:hover{
-        transition: all 1s;
-        font-size: 1.15rem;
-        font-weight: 600;
-        background:none;
-        text-shadow: 0.1em 0.1em 0.5em black
-    }
-    img{
-        position:absolute;
-        height: 346px;
-        opacity: .7;
-    }
-    img:hover{
-        height: 360px;
-        transition: all .75s;
-        opacity: .9;
-    }
-    .name{
-        pointer-events: none;
-        position:absolute;
-        flex-direction: column;
-        color: #fcfcfc;
-    }
-    .info{
-        pointer-events: none;
-        position: absolute;
-        bottom: 5px;
-        left: 10px;
-        color: #fcfcfc;
-        font-size: .6rem;
-        text-align: left;
-        background-color: rgba(51, 51, 51, 0.623);
-        padding: 1% 2%;
-        font-weight: 400;
-    }
-    .page{
-        width: 94%;
-        display: flex;
-        justify-content: space-between;
-        position:absolute;
-        text-align: center;
-        font-size: 5rem;
-    }
-    .page span{
-        cursor: pointer;
-    }
-    .back{
-        cursor: pointer;
-    }
-    .back:hover{
-        transition: all .5s;
-        font-size: 1.6rem;
+        .card{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            width: 464px;
+            height: 180px;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.623);
+            position: relative;
+            cursor: pointer;
+            margin: 1.2%;
+            &:hover{
+                transition: all 1s;
+                font-size: 1.15rem;
+                font-weight: 600;
+                background:none;
+                text-shadow: 0.1em 0.1em 0.5em black
+            }
+            img{
+                position:absolute;
+                height: 346px;
+                opacity: .7;
+                &:hover{
+                    height: 360px;
+                    transition: all .75s;
+                    opacity: .9;
+                }
+            }
+            .info{
+                pointer-events: none;
+                position: absolute;
+                bottom: 5px;
+                left: 10px;
+                color: #fcfcfc;
+                font-size: .6rem;
+                text-align: left;
+                background-color: rgba(51, 51, 51, 0.623);
+                padding: 1% 2%;
+                font-weight: 400;
+            }
+            .name{
+                pointer-events: none;
+                position:absolute;
+                flex-direction: column;
+                color: #fcfcfc;
+            }
+        }
+        .page{
+            width: 94%;
+            display: flex;
+            justify-content: space-between;
+            position:absolute;
+            text-align: center;
+            font-size: 5rem;
+            span{
+                cursor: pointer;
+            }
+        }
     }
 </style>
