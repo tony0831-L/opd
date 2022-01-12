@@ -1,0 +1,24 @@
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+    }
+  }
+
+@keyframes flyinTop {
+    from {
+        margin-top: -100vh;
+        opacity: 0;
+    }
+    to {
+    }
+}
+@keyframes flyinleft {
+    from {
+        margin-left: -100vw;
+        opacity: 0;
+    }
+    to {
+    }
+}
