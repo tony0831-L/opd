@@ -1,14 +1,14 @@
 <template>
     <div class="sinfo">
         <h1>
-            <span v-show="!isbig">景點一覽</span><span v-show="isbig">景點資訊<i class="bi bi-arrow-return-left back" @click="back()"></i></span>
+            <span>景點一覽</span>
         </h1>
     </div>
     <div class="cards" v-show="!isbig">
         <div class="page">
             <span @click="prev">&lt;</span><span @click="next">&gt;</span>
         </div>
-        <div class="card" v-for="(i,index) in data" :key="index" v-show="index<inde*6&&index>=(inde-1)*6" @click="choose(i)">
+        <div class="card" v-for="(i,index) in data" :key="index" v-show="index<inde*6&&index>=(inde-1)*6" @click="choose(i,index)">
             <img :src="i.Picture1" alt="">
             <div class="name">
                 {{i.Name}}
@@ -18,22 +18,17 @@
             </div>
         </div>
     </div>
-    <biginfo v-if="isbig" :info="info" :sta="sta"></biginfo>
 </template>
 
 <script>
-import biginfo from './biginfo.vue'
+import storage from '../utils/storage.js'
 export default {
-    props:['data','sta'],
-    components:{
-        biginfo:biginfo,
-    },
     data(){
         return{
             inde:1,
             num:0,
-            info:{},
-            isbig:false,
+            data:{},
+            sta:[],
         }
     },
     methods:{
@@ -56,11 +51,9 @@ export default {
                 this.inde=this.num;
             }
         },
-        choose(i){
-            this.isbig=true;
-            this.info=i;
-            this.$emit('isbig',true)
-            console.log(i)
+        choose(i,index){
+            this.$router.push({ path: '/sub',query:{index:index}})
+            storage.setChoise(i)
         },
         back(){
             this.isbig=false;
@@ -69,6 +62,8 @@ export default {
     },
     mounted(){
         this.resize();
+        this.data = storage.getSta();
+        this.sta = storage.getBike();
     }
 };
 </script>
@@ -97,11 +92,12 @@ export default {
         }
     }
     .cards{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 2% 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
         align-items: center;
+        gap: 2rem 2rem;
         .card{
             display: flex;
             justify-content: center;
@@ -113,7 +109,6 @@ export default {
             background-color: rgba(51, 51, 51, 0.623);
             position: relative;
             cursor: pointer;
-            margin: 1.2%;
             &:hover{
                 transition: all 1s;
                 font-size: 1.15rem;
