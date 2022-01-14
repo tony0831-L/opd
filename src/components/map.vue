@@ -48,7 +48,7 @@ export default {
   },
   data() {
     return {
-    sta:[],
+        sta:[],
       center: this.cen,
       markers: [
         {
@@ -67,6 +67,10 @@ export default {
     }
   },
   methods:{
+      init(){
+          this.ping()
+          this.sta = storage.getSta()
+      },
       ping(){
         this.sta.forEach(element => {
             if (element.available_spaces==0) {
@@ -131,8 +135,7 @@ export default {
       }
   },
   mounted(){
-      this.sta = storage.getBike()
-      this.ping()
+      this.init()
   }
 }
 </script>

@@ -33,6 +33,16 @@ export default {
         }
     },
     methods:{
+        init(){
+            this.data = storage.getSta();      
+            this.sta = storage.getBike();
+            if(this.data.length==undefined){
+                console.log("in")
+                setTimeout(()=>{
+                    this.init()
+                },1000)
+            }
+        },
         resize(){
             this.num=Math.round(this.data.length/6)
         },
@@ -62,10 +72,8 @@ export default {
         }
     },
     mounted(){
+        this.init()
         this.resize();
-        this.data = storage.getSta();
-        console.log(storage.getSta())
-        this.sta = storage.getBike();
     }
 };
 </script>

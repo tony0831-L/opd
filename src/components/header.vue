@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'header',
+  name: 'headertop',
   data(){
     return {
     }
