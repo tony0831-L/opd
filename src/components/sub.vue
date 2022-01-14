@@ -103,8 +103,8 @@ export default {
             justify-content: center;
             align-content: center;
             align-items: center;
-            width: 464px;
-            height: 180px;
+            width: 29rem;
+            height: 11.25rem;
             overflow: hidden;
             background-color: rgba(51, 51, 51, 0.623);
             position: relative;
@@ -118,10 +118,10 @@ export default {
             }
             img{
                 position:absolute;
-                height: 346px;
+                height: 21.6rem;
                 opacity: .7;
                 &:hover{
-                    height: 360px;
+                    height: 22.5rem;
                     transition: all .75s;
                     opacity: .9;
                 }
@@ -157,4 +157,23 @@ export default {
             }
         }
     }
+    @media only screen and (min-width: 0px) and (max-width: 425px) {
+        .cards{
+            padding: 2% 6%;
+            grid-template-columns: 1fr;
+            gap: 2rem 2rem;
+            .card{
+                width: 20rem;
+                height: 9.5rem;
+                cursor: pointer;
+                &:hover{
+                    transition: all 1s;
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                    background:none;
+                    text-shadow: 0.1em 0.1em 0.5em black
+                }
+            }
+        }
+  }
 </style>
