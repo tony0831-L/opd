@@ -36,7 +36,7 @@ export default {
       box-shadow: 0em .3em .1em 0 rgba(51, 51, 51, 0.707);
       z-index: 1;
       img{
-        width: 100px;
+        width: 6.25rem;
         cursor: pointer;
       }
       .section{
@@ -54,5 +54,28 @@ export default {
           }
         }
       }
+    }
+    @media only screen and (min-width: 425px) and (max-width: 768px) {
+      // nav{
+      //   img{
+      //     width: 100px;
+      //     cursor: pointer;
+      //   }
+      //   .section{
+      //     width: 36rem;
+      //     font-weight: 600;
+      //     display: flex;
+      //     justify-content: space-evenly;
+      //     align-items: center;
+      //     a{
+      //       font-size: 1.2rem;
+      //       color: #2c3e50;
+      //       text-decoration: none;
+      //       &:hover{
+      //         border-bottom: solid .1em #2c3e50;
+      //       }
+      //     }
+      //   }
+      // }
     }
 </style>

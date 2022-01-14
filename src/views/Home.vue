@@ -36,13 +36,6 @@ export default {
 </script>
 
 <style lang="scss">
-*{
-  margin: 0%;
-  padding: 0%;
-}
-body{
-  background-color: #fcfcfc;
-  font-size: 100%;
   #app {
     width: 100%;
     overflow: hidden;
@@ -76,5 +69,4 @@ body{
       }
     }
   }
-}
 </style>
