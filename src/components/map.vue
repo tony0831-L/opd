@@ -212,6 +212,9 @@ export default {
             width: 77%;
             height: 20vh;
             margin-bottom: 2rem;
+            h1{
+                font-size: 1.5rem;
+            }
         }
     }
 </style>
