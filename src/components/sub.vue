@@ -1,4 +1,5 @@
 <template>
+    <img src="../assets/loading.gif" alt="" v-show="data.length==0">
     <div class="sinfo">
         <h1>
             <span>景點一覽</span>
@@ -27,7 +28,7 @@ export default {
         return{
             inde:1,
             num:0,
-            data:{},
+            data:[],
             sta:[],
         }
     },
@@ -63,6 +64,7 @@ export default {
     mounted(){
         this.resize();
         this.data = storage.getSta();
+        console.log(storage.getSta())
         this.sta = storage.getBike();
     }
 };

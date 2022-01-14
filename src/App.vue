@@ -14,9 +14,7 @@ export default {
     headerTop,foot
   },
   setup(){
-    storage.init().then(res=>{
-      console.log(res)
-    })
+    storage.init()
   }
 }
 </script>

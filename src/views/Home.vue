@@ -1,11 +1,10 @@
 <template>
-  <img src="../assets/loading.gif" alt="" v-show="data.length">
   <div class="landing">
     <img src="../assets/the-urban-landscape-1698285.png" alt="" srcset="">
     <h1>遇見高雄</h1>
   </div>
   <subs @isbig='showinfo'/> 
-  <umap :sta='ubike' :cen='center' v-if="ubike.length>10"/>
+  <umap :cen='center'/>
 </template>
 
 <script>
@@ -20,18 +19,19 @@ export default {
   },
   data(){
     return {
-      data:[],
-      ubike:[],
       center: {lat: 22.6351239, lng: 120.3389189},
     }
   },
   methods:{
     showinfo(input){
       this.isbig=input;
+    },
+    init(){
+      this.ubike=storage.getBike();
     }
   },
   mounted(){
-    this.ubike=storage.getBike();
+    this.init()
   }
 }
 </script>

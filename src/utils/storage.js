@@ -26,11 +26,11 @@ function toString(){
   return {Bike:getBike().length,Sta:getSta().length}
 }
 
-async function init(){
-  await privateGetsta().then(res=>{
+function init(){
+  privateGetsta().then(res=>{
     setSta(res);
   })
-  await privateGetbike().then(res=>{
+  privateGetbike().then(res=>{
     setBike(res)
   })
   return(toString())

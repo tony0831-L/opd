@@ -38,15 +38,17 @@
     </div>
 </template>
 <script>
+import storage from '../utils/storage.js'
 import bike from "./bikeinfo.vue"
 export default {
   name: 'umap',
-  props:['sta','cen'],
+  props:['cen'],
  components:{
     bike:bike
   },
   data() {
     return {
+    sta:[],
       center: this.cen,
       markers: [
         {
@@ -129,6 +131,7 @@ export default {
       }
   },
   mounted(){
+      this.sta = storage.getBike()
       this.ping()
   }
 }
