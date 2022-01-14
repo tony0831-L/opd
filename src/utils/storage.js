@@ -22,17 +22,18 @@ async function privateGetbike(){
   return data
 }
 
+function toString(){
+  return {Bike:getBike().length,Sta:getSta().length}
+}
+
 async function init(){
-  let length = {x:0,y:0};
   await privateGetsta().then(res=>{
     setSta(res);
-    length.x = res
   })
   await privateGetbike().then(res=>{
     setBike(res)
-    length.y = res
   })
-  return length
+  return(toString())
 }
 
 function setSta(data){
@@ -55,11 +56,8 @@ function getBike(){
   return JSON.parse(localStorage.getItem("Bike"))
 }
 
-function getChoise(){
-  return JSON.parse(localStorage.getItem("choise"))
-}
 
 
 module.exports = {
-    init,setSta,setBike,getSta,getBike,setChoise,getChoise
+    init,setSta,setBike,getSta,getBike,setChoise,toString
 }

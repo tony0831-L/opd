@@ -15,10 +15,7 @@ export default {
   },
   setup(){
     storage.init().then(res=>{
-      if(!res.x||!res.y){
-        console.log("in")
-        this.setup()
-      }
+      console.log(res)
     })
   }
 }
