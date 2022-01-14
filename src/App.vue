@@ -14,7 +14,12 @@ export default {
     headerTop,foot
   },
   setup(){
-    storage.init()
+    storage.init().then(res=>{
+      if(!res.x||!res.y){
+        console.log("in")
+        this.setup()
+      }
+    })
   }
 }
 </script>

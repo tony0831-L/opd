@@ -1,4 +1,5 @@
 <template>
+  <img src="../assets/loading.gif" alt="" v-show="data.length">
   <div class="landing">
     <img src="../assets/the-urban-landscape-1698285.png" alt="" srcset="">
     <h1>遇見高雄</h1>

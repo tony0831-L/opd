@@ -22,13 +22,17 @@ async function privateGetbike(){
   return data
 }
 
-function init(){
-  privateGetsta().then(res=>{
+async function init(){
+  let length = {x:0,y:0};
+  await privateGetsta().then(res=>{
     setSta(res);
+    length.x = res
   })
-  privateGetbike().then(res=>{
+  await privateGetbike().then(res=>{
     setBike(res)
+    length.y = res
   })
+  return length
 }
 
 function setSta(data){
