@@ -22,11 +22,17 @@ async function privateGetbike(){
   return data
 }
 
+function privateinit(){
+  setSta({});
+  setBike({})
+}
+
 function toString(){
   return {Bike:getBike().length,Sta:getSta().length}
 }
 
 function init(){
+  privateinit()
   privateGetsta().then(res=>{
     setSta(res);
   })
