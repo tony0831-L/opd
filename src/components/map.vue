@@ -206,4 +206,11 @@ export default {
             }
         }
     }
+
+    @media only screen and (min-width: 0px) and (max-width: 425px) {
+        .contaner{
+            width: 77%;
+            height: 20vh;
+        }
+    }
 </style>
