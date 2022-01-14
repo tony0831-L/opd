@@ -175,7 +175,7 @@ export default {
                 }
             }
             .page{
-                width: 96%;
+                width: 94%;
                 font-size: 1.5rem;
             }
         }
