@@ -211,6 +211,7 @@ export default {
         .contaner{
             width: 77%;
             height: 20vh;
+            margin-bottom: 2rem;
         }
     }
 </style>
