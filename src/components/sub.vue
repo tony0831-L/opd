@@ -174,6 +174,10 @@ export default {
                     text-shadow: 0.1em 0.1em 0.5em black
                 }
             }
+            .page{
+                width: 96%;
+                font-size: 2.5rem;
+            }
         }
   }
 </style>
