@@ -216,5 +216,17 @@ export default {
                 font-size: 1.5rem;
             }
         }
+        .linfo{
+            flex-direction: column;
+            .text{
+                width:100%;
+                margin: 3%;
+                font-size: 1rem;
+                line-height:1.5rem;
+                h2{
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
 </style>
