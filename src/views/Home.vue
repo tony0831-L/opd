@@ -60,7 +60,7 @@ export default {
         padding: 0px;
         text-shadow: 0.1em 0.1em 0.5em black;
         position: absolute;
-        font-size: 2.5em;
+        font-size: 2.5rem;
       }
       img{
         position: absolute;
@@ -76,7 +76,7 @@ export default {
         margin-top: 2.3rem;
         height:18vh;
         h1{
-          font-size: 2.5em;
+          font-size: 2rem;
         }
       }
     }
