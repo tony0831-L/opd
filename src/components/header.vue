@@ -39,20 +39,20 @@ export default {
         width: 100px;
         cursor: pointer;
       }
-      a{
-        font-size: 1.2rem;
-        color: #2c3e50;
-        text-decoration: none;
-        &:hover{
-          border-bottom: solid .1em #2c3e50;
-        }
-      }
       .section{
-        width: 30%;
+        width: 36rem;
         font-weight: 600;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        a{
+          font-size: 1.2rem;
+          color: #2c3e50;
+          text-decoration: none;
+          &:hover{
+            border-bottom: solid .1em #2c3e50;
+          }
+        }
       }
     }
 </style>

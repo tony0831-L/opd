@@ -42,6 +42,7 @@ export default {
 }
 body{
   background-color: #fcfcfc;
+  font-size: 100%;
   #app {
     width: 100%;
     overflow: hidden;
