@@ -61,7 +61,7 @@ export default {
 .biginfo{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 0% 15%;
     background: none;
     position: relative;
     align-items: center;
@@ -73,7 +73,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 69%;
+        width: 100%;
         height: 16rem;
         overflow: hidden;
         background-color: rgba(51, 51, 51, 0.723);
@@ -91,8 +91,8 @@ export default {
         }
     }
     .mapinfo{
+        width: 100%;
         display: flex;
-        width: 70%;
         height: 20rem;
         position: relative;
         flex-direction: column;
@@ -110,7 +110,6 @@ export default {
                 display: flex;
                 width: 50%;
                 padding: 5%;
-                margin-left: 2%;
                 font-size: 1.5rem;
                 flex-direction: column;
                 justify-content: center;
@@ -128,7 +127,6 @@ export default {
         }
     }
     .des{
-        width: 70%;
         text-align: left;
         font-size: 1.2rem;
         margin-bottom: 2%;
@@ -137,6 +135,43 @@ export default {
             border-bottom: solid .06em #878787;
             margin-bottom: 2rem;
             font-size: 1.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 425px) {
+    .biginfo{
+        padding: 0% 4%;
+        .mapinfo{
+            h2{
+                text-align: center;
+                border-bottom: solid .06em #878787;
+                margin-bottom: 2rem;
+                font-size: 1.5rem;
+            }
+            .row{
+                padding: 4% 10%;
+                .minfo{
+                    width: 30%;
+                    padding: 5%;
+                    font-size: 1rem;
+                    h3{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+        .des{
+            padding: 4% 10%;
+            text-align: left;
+            font-size: 1.2rem;
+            margin-bottom: 2%;
+            h2{
+                text-align: center;
+                border-bottom: solid .06em #878787;
+                margin-bottom: 2rem;
+                font-size: 1.5rem;
+            }
         }
     }
 }
