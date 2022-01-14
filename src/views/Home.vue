@@ -69,4 +69,16 @@ export default {
       }
     }
   }
+
+  @media only screen and (min-width: 0px) and (max-width: 425px) {
+    #app {
+      .landing{
+        margin-top: 2.3rem;
+        height:18vh;
+        h1{
+          font-size: 2.5em;
+        }
+      }
+    }
+  }
 </style>
