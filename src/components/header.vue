@@ -55,27 +55,18 @@ export default {
         }
       }
     }
-    @media only screen and (min-width: 425px) and (max-width: 768px) {
-      // nav{
-      //   img{
-      //     width: 100px;
-      //     cursor: pointer;
-      //   }
-      //   .section{
-      //     width: 36rem;
-      //     font-weight: 600;
-      //     display: flex;
-      //     justify-content: space-evenly;
-      //     align-items: center;
-      //     a{
-      //       font-size: 1.2rem;
-      //       color: #2c3e50;
-      //       text-decoration: none;
-      //       &:hover{
-      //         border-bottom: solid .1em #2c3e50;
-      //       }
-      //     }
-      //   }
-      // }
+    @media only screen and (min-width: 0px) and (max-width: 425px) {
+      nav{
+        display: grid;
+        grid-template-columns: .3fr 1fr;
+        width: 100%;
+        padding: .4%;
+        .section{
+            width: auto;
+          a{
+            font-size: 1rem;
+          }
+        }
+      }
     }
 </style>
