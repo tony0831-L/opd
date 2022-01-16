@@ -75,6 +75,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import url('../sass/anime.scss');
 .biginfo{
     display: flex;
     flex-direction: column;
@@ -86,6 +87,8 @@ export default {
     margin-top: 2.3rem;
     margin-bottom: 2%;
     .banner{
+        animation-name: flyinTop;
+        animation-duration: 1.5s;
         position: relative;
         display: flex;
         align-items: center;
@@ -95,6 +98,7 @@ export default {
         overflow: hidden;
         background-color: rgba(51, 51, 51, 0.723);
         margin-bottom: 2%;
+        z-index: 9;
         h1{
             font-size: 2.1rem;
             color: #fff;
@@ -102,12 +106,17 @@ export default {
             text-shadow: 0.1em 0.1em 0.5em black
         }
         img{
+            animation-name: fadein;
+            animation-duration: 1.5s;
             position: absolute;
             width: 100%;
             opacity: .5;
         }
     }
     .mapinfo{
+        animation-name: flyinTop;
+        animation-duration: 1.5s;
+        z-index: 8;
         width: 100%;
         display: flex;
         height: 20rem;
@@ -144,6 +153,9 @@ export default {
         }
     }
     .des{
+        animation-name: flyinTop;
+        animation-duration: 1.5s;
+        z-index: 8;
         text-align: left;
         font-size: 1.2rem;
         margin-bottom: 2%;

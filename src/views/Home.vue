@@ -60,6 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('../sass/anime.scss');
   #app {
     width: 100%;
     overflow: hidden;
@@ -79,6 +80,8 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      animation-name: fadein;
+      animation-duration: 2.5s;
       h1{
         margin: 0px;
         padding: 0px;
@@ -121,19 +124,12 @@ export default {
       justify-items: center;
       align-items: center;
       gap: 2rem 2rem;
-      .page{
-          width: 94%;
-          display: flex;
-          justify-content: space-between;
-          position:absolute;
-          text-align: center;
-          font-size: 5rem;
-          span{
-              cursor: pointer;
-          }
-      }
+      animation-name: flyinleft;
+      animation-duration: 1.5s;
     }
     .showall{
+      animation-name: fadein;
+      animation-duration: 2.5s;
       color: #313131;
       border-radius: .3rem;
       border: none;

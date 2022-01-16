@@ -34,7 +34,7 @@ export default {
       display: flex;
       justify-content: space-between;
       box-shadow: 0em .3em .1em 0 rgba(51, 51, 51, 0.707);
-      z-index: 1;
+      z-index: 10;
       img{
         width: 6.25rem;
         cursor: pointer;
