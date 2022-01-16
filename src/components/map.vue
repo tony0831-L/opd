@@ -69,63 +69,75 @@ export default {
   methods:{
       init(){
           this.ping()
-          this.sta = storage.getSta()
+          this.sta = storage.getBike()
+            if(this.sta.length==undefined){
+            console.log("in")
+            setTimeout(()=>{
+                this.init()
+            },1000)
+        }
       },
       ping(){
-        this.sta.forEach(element => {
-            if (element.available_spaces==0) {
-                this.markers.push({
-                    icon:{
-                        url:"https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                        scaledSize: {width: 50, height: 50},
-                        labelOrigin: {x: 16, y: -10}
-                    },
-                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
-                    position:{
-                        lat:parseFloat(element.lat),lng:parseFloat(element.lng)
-                    }
-                })
-            }else if(element.available_spaces<=5){
-                this.markers.push({
-                    icon:{
-                        url:"https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-                        scaledSize: {width: 50, height: 50},
-                        labelOrigin: {x: 16, y: -10}
-                    },
-                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
-                    position:{
-                        lat:parseFloat(element.lat),lng:parseFloat(element.lng)
-                    }
-                })
-            }
-            else if(element.available_spaces=="land"){
-                console.log("in")
-                this.markers.push({
-                    icon:{
-                        url:"https://static.thenounproject.com/png/331581-200.png",
-                        scaledSize: {width: 70, height: 70},
-                        labelOrigin: {x: 16, y: -10}
-                    },
-                    title:element.name_tw,
-                    position:{
-                        lat:parseFloat(element.lat),lng:parseFloat(element.lng)
-                    }
-                })
-            }else{
-                this.markers.push({
-                    icon:{
-                        url:"https://maps.google.com/mapfiles/ms/icons/green-dot.png",
-                        scaledSize: {width: 50, height: 50},
-                        labelOrigin: {x: 16, y: -10}
-                    },
-                    title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
-                    position:{
-                        lat:parseFloat(element.lat),lng:parseFloat(element.lng)
-                    }
-                })
-            }
-        });
-
+          if(this.sta.length==undefined){
+              setTimeout(()=>{
+                  console.log("ping")
+                  this.init()
+              },1000)
+          }else{
+                this.sta.forEach(element => {
+                if (element.available_spaces==0) {
+                    this.markers.push({
+                        icon:{
+                            url:"https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                            scaledSize: {width: 50, height: 50},
+                            labelOrigin: {x: 16, y: -10}
+                        },
+                        title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
+                        position:{
+                            lat:parseFloat(element.lat),lng:parseFloat(element.lng)
+                        }
+                    })
+                }else if(element.available_spaces<=5){
+                    this.markers.push({
+                        icon:{
+                            url:"https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                            scaledSize: {width: 50, height: 50},
+                            labelOrigin: {x: 16, y: -10}
+                        },
+                        title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
+                        position:{
+                            lat:parseFloat(element.lat),lng:parseFloat(element.lng)
+                        }
+                    })
+                }
+                else if(element.available_spaces=="land"){
+                    console.log("in")
+                    this.markers.push({
+                        icon:{
+                            url:"https://static.thenounproject.com/png/331581-200.png",
+                            scaledSize: {width: 70, height: 70},
+                            labelOrigin: {x: 16, y: -10}
+                        },
+                        title:element.name_tw,
+                        position:{
+                            lat:parseFloat(element.lat),lng:parseFloat(element.lng)
+                        }
+                    })
+                }else{
+                    this.markers.push({
+                        icon:{
+                            url:"https://maps.google.com/mapfiles/ms/icons/green-dot.png",
+                            scaledSize: {width: 50, height: 50},
+                            labelOrigin: {x: 16, y: -10}
+                        },
+                        title:element.name_tw+" ("+element.available_spaces+"/"+element.parking_spaces+")",
+                        position:{
+                            lat:parseFloat(element.lat),lng:parseFloat(element.lng)
+                        }
+                    })
+                }
+            });
+          }
       },
       choose(Info,index){
           this.center=Info.position

@@ -43,16 +43,29 @@ export default {
         }
     },
     methods:{
+        init(){
+            this.info=storage.getSta()[this.$route.query.index];
+            this.bike=storage.getBike();
+            if(!this.bike.length){
+                this.init()
+                setTimeout(()=>{
+                    this.init()
+                },1000)
+            }
+        }
     },
     mounted(){
-        this.info=storage.getSta()[this.$route.query.index];
-        this.bike=storage.getBike();
-        this.center ={
-            lat:parseFloat(this.info.Py),
-            lng:parseFloat(this.info.Px)
+        if(!this.$route.query.index){
+            console.error("query error")
+            this.$router.push('/')
+        }else{
+            this.init()
+            this.center ={
+                lat:parseFloat(this.info.Py),
+                lng:parseFloat(this.info.Px)
+            }
+            this.bike.push({"address_tw":this.info.Add,"name_tw":this.info.Name,"available_spaces":"land","district_tw":this.info.Zone,"lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
         }
-        this.bike.push({"address_tw":this.info.Add,"name_tw":this.info.Name,"available_spaces":"land","district_tw":this.info.Zone,"lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
-        console.log(this.bike[this.bike.length-1])
     },
 };
 </script>
