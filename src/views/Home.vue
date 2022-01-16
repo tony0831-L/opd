@@ -176,8 +176,9 @@ export default {
         }
       }
       .cards{
-        padding: 2% 0%;
-        grid-template-columns: 1fr;
+        padding: 2% 2%;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 0rem;
       }
     }
   }

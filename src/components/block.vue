@@ -78,7 +78,7 @@ export default {
             height: 9.5rem;
         }
     }
-    @media only screen and (min-width: 425px) and (max-width: 768px){
+    @media only screen and (min-width: 425px) and (max-width: 1400px){
         .card{
             width: 24rem;
             height: 10rem;
