@@ -1,5 +1,6 @@
 <template>
-  <div class="landing">
+<div class="all" v-show="ready">
+    <div class="landing">
     <img src="../assets/the-urban-landscape-1698285.png" alt="" srcset="">
     <h1>遇見高雄</h1>
   </div>
@@ -25,6 +26,10 @@
         </div>
         <umap v-if="bike.length>2" :sta='bike' :cen="center"></umap>
     </div>
+</div>
+<div class="load" v-show="!ready">
+  <img src="../assets/loading.gif" alt="">
+</div>
 </template>
 
 <script>
@@ -51,6 +56,8 @@ export default {
                 setTimeout(()=>{
                     this.init()
                 },1000)
+            }else{
+                this.ready=true
             }
         }
     },
@@ -167,7 +174,14 @@ export default {
         }
     }
 }
-
+.load{
+    background: #fff;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
 @media only screen and (min-width: 0px) and (max-width: 425px) {
     .biginfo{
         padding: 0% 4%;
