@@ -42,6 +42,7 @@ export default {
     },
     data(){
         return{
+            ready:false,
             bike:[],
             info:{},
             center:{}
