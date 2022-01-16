@@ -166,4 +166,19 @@ export default {
       }
     }
   }
+  @media only screen and (min-width: 425px) and (max-width: 1400px){
+    #app {
+      .landing{
+        margin-top: 2.3rem;
+        height:25vh;
+        h1{
+          font-size: 2rem;
+        }
+      }
+      .cards{
+        padding: 2% 0%;
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 </style>
