@@ -59,12 +59,16 @@ export default {
             console.error("query error")
             this.$router.push('/')
         }else{
-            this.init()
-            this.center ={
-                lat:parseFloat(this.info.Py),
-                lng:parseFloat(this.info.Px)
+            try {
+                this.init()
+                this.center ={
+                    lat:parseFloat(this.info.Py),
+                    lng:parseFloat(this.info.Px)
+                }
+                this.bike.push({"address_tw":this.info.Add,"name_tw":this.info.Name,"available_spaces":"land","district_tw":this.info.Zone,"lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
+            } catch (error) {
+                this.$router.push({ path: '/sub',query:{index:this.$route.query.index}})
             }
-            this.bike.push({"address_tw":this.info.Add,"name_tw":this.info.Name,"available_spaces":"land","district_tw":this.info.Zone,"lat":parseFloat(this.info.Py),"lng":parseFloat(this.info.Px)})
         }
     },
 };
