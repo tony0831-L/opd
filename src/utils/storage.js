@@ -67,5 +67,5 @@ function getBike(){
 
 
 module.exports = {
-    init,setSta,setBike,getSta,getBike,setChoise,toString
+    init,setSta,setBike,getSta,getBike,toString
 }
